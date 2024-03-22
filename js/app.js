@@ -22,7 +22,7 @@ function GetWeatherData(city) {
         let lat, lon;
         lat = data[0].lat
         lon = data[0].lon
-        return fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&lang=tr`).then((response) => {
+        return fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}`).then((response) => {
             if (!response.status == 200) {
                 throw new Error("API not connected.");
             }
