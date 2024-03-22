@@ -42,7 +42,6 @@ $("#weather_app").submit((e, city) => {
         return error("Hava durumunu sorgulamak için şehir kısmını doldurmalısınız!");
     }
     GetWeatherData(city).then((data) => {
-        console.log(data);
         JsonData = {
             temp: KelvinToCelsius(data.current.temp),
             humidty: data.current.humidity,
@@ -52,7 +51,6 @@ $("#weather_app").submit((e, city) => {
         }
         $('#weather-info').removeClass('d-none'); // 'd-none' sınıfını kaldır
         $('#weather-info').addClass('d-block');
-        console.log(JsonData)
         var city_name = $('#city_name');
         var temp = $('#temperature');
         var desc = $('#description');
