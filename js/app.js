@@ -15,7 +15,7 @@ function KelvinToCelsius(kelvin) {
 function GetWeatherData(city) {
     return fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`).then((response) => {
         if (!response.status == 200) {
-            throw new Error("API'a bağlanılamadı");
+            throw new Error("API not connected.");
         }
         return response.json()
     }).then((data) => {
@@ -24,14 +24,14 @@ function GetWeatherData(city) {
         lon = data[0].lon
         return fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&lang=tr`).then((response) => {
             if (!response.status == 200) {
-                throw new Error("API'a bağlanılamadı");
+                throw new Error("API not connected.");
             }
             return response.json();
         }).then((data) => {
             return data;
         })
     }).catch((er) => {
-        error("Lütfen geçerli bir şehir ismi giriniz!");
+        error("Please enter a valid city name.!");
         throw new Error(er);
     })
 }
@@ -39,10 +39,9 @@ $("#weather_app").submit((e, city) => {
     e.preventDefault();
     city = $("#city").val().trim();
     if (city == "") {
-        return error("Hava durumunu sorgulamak için şehir kısmını doldurmalısınız!");
+        return error("Please enter a city name!");
     }
     GetWeatherData(city).then((data) => {
-        console.log(data);
         JsonData = {
             temp: KelvinToCelsius(data.current.temp),
             humidty: data.current.humidity,
@@ -52,7 +51,6 @@ $("#weather_app").submit((e, city) => {
         }
         $('#weather-info').removeClass('d-none'); // 'd-none' sınıfını kaldır
         $('#weather-info').addClass('d-block');
-        console.log(JsonData)
         var city_name = $('#city_name');
         var temp = $('#temperature');
         var desc = $('#description');

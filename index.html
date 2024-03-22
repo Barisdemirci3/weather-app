@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hava Durumu</title>
+    <title>Weather App</title>
     <!-- Bootstrap CSS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,25 +13,25 @@
 <body>
     <div class="container mt-5">
         <div class="card shadow">
-            <h2 class="card-header text-center">Hava Durumu</h2>
+            <h2 class="card-header text-center">Weather</h2>
             <div class="card-body">
                 <form id="weather_app">
                     <div class="mb-3">
-                        <label for="cityInput" class="form-label">Şehir</label>
-                        <input type="text" class="form-control" id="city" placeholder="Şehir girin...">
+                        <label for="cityInput" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" placeholder="Please enter a city...">
                     </div>
-                    <button type="submit" class="btn btn-primary">Hava Durumu Göster</button>
+                    <button type="submit" class="btn btn-primary">Show Weather</button>
                 </form>
             </div>
             <div id="weather-info" class="card-body d-none">
                 <div class="row">
                     <div class="col-md-6">
                         <img src="" id="weather-icon" alt="Hava Durumu Görseli" class="img-fluid">
-                        <p class="card-text">Şehir: <span id="city_name"></span></p>
-                        <p class="card-text">Sıcaklık: <span id="temperature"></span>°C</p>
-                        <p class="card-text">Durum: <span id="description"></span></p>
-                        <p class="card-text">Nem: <span id="humidity"></span>%</p>
-                        <p class="card-text">Rüzgar Hızı: <span id="wind-speed"></span> m/s</p>
+                        <p class="card-text">City: <span id="city_name"></span></p>
+                        <p class="card-text">Temperature: <span id="temperature"></span>°C</p>
+                        <p class="card-text">Status: <span id="description"></span></p>
+                        <p class="card-text">Humidty: <span id="humidity"></span>%</p>
+                        <p class="card-text">Win Speed: <span id="wind-speed"></span> m/s</p>
                     </div>
                 </div>
             </div>
