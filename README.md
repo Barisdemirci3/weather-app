@@ -11,7 +11,7 @@
     <br/>
     <br/>
     <a href="https://barisdemirci3.github.io/weather-app/">View Demo</a>
-    .
+    
   </p>
 </p>
 
