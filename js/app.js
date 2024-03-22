@@ -13,7 +13,7 @@ function KelvinToCelsius(kelvin) {
     return Math.floor(kelvin - 273.15);
 }
 function GetWeatherData(city) {
-    return fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`).then((response) => {
+    return fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${API_KEY}`).then((response) => {
         if (!response.status == 200) {
             throw new Error("API'a bağlanılamadı");
         }
