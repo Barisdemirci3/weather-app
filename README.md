@@ -19,7 +19,7 @@
 
 ## About The Project
 
-![Screen Shot]([https://s12.gifyu.com/images/SVLWh.gif])
+![Screen Shot](https://s12.gifyu.com/images/SVLWh.gif)
 
 This project actually represents the use of a simple API. OpenWeatherCell API and OpenWeatherGeocoding API were used as APIs. Main things learned:
 * API basic structure
